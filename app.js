@@ -7,8 +7,11 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/greeting", function (req, res) {
-  const msg = `Welcome to Wally'\s Hotdogs`;
-  res.send(msg);
+  const greeting = {
+welcome: "Welcome to Wally'\s Hotdogs"
+  }
+
+  res.send(greeting);
 });
 
 app.get("/options", function (req, res) {
