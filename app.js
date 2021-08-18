@@ -8,9 +8,8 @@ app.use(express.json());
 
 app.get("/greeting", function (req, res) {
   const greeting = {
-welcome: "Welcome to Wally'\s Hotdogs"
-  }
-
+    welcome: "Welcome to Wally's Hotdogs",
+  };
   res.send(greeting);
 });
 
@@ -38,20 +37,10 @@ app.get("/food", function (req, res) {
 
 app.post("/food", function (req, res) {
   const foodSelection = req.body;
-  const foodItem = foodSelection.foodItem;
-  const price = parseFloat(foodSelection.price);
-  const foodItemAndPrice = {
-    food: foodItem,
-    price: price,
-  };
-  res.send(foodItemAndPrice);
-});
-
-app.post("/food", function (req, res) {
-  const foodSelection = req.body;
-  const foodItem = foodSelection.foodItem;
-  const price = parseFloat(foodSelection.price);
-  const foodItemAndPrice = {
+  console.log(foodSelection);
+  let foodItem = foodSelection.food;
+  let price = parseFloat(foodSelection.price);
+  let foodItemAndPrice = {
     food: foodItem,
     price: price,
   };
